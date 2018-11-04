@@ -27,10 +27,17 @@ class NewPost extends Component {
         axios.post("/posts", data)
         .then(response => {
             console.log(response);
-            this.setState({
-                posted: true
-            })
+            // this.setState({
+            //     posted: true
+            // })
+            this.props.history.replace({
+                    pathname: '/posts/'
+                });
         });
+
+        // this.props.history.goBack({
+        //     pathname: '/posts/'
+        // });
     }
 
     render () {
